@@ -13,8 +13,8 @@ int main(void)
 	{
 		for (b = 1; b < 10; b++)
 		{
-		printf("%d%d", a, b);
-		if (b < 9)
+			printf("%d%d", a, b);
+			if (b < 9)
 			putchar(',');
 			putchar(' ');
 		}

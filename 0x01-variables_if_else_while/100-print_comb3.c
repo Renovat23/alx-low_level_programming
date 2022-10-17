@@ -5,22 +5,33 @@
  */
 int main(void)
 {
-	int a;
+	int i, k = '0', j;
 
-	int b;
-
-	for (a = 0; a < 9; a++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (b = 1; b < 10; b++)
+		for (j = k; j <= '9'; j++)
 		{
-			if ( a < b)
+			if (i != j)
 			{
-				printf("%d%d", a, b);
-				if (b < 9)
+				putchar(i);
+				putchar(j);
+			}
+			if (i == j)
+			{
+				continue;
+			}
+			if (i == '8' && j == '9')
+			{
+				break;
+			}
+			else
+			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
+		k++;
 	}
+	putchar('\n');
 	return (0);
 }

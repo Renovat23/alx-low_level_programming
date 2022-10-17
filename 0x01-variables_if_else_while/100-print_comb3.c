@@ -13,10 +13,13 @@ int main(void)
 	{
 		for (b = 1; b < 10; b++)
 		{
-			printf("%d%d", a, b);
-			if (b < 9)
-			putchar(',');
-			putchar(' ');
+			if ( a < b)
+			{
+				printf("%d%d", a, b);
+				if (b < 9)
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	return (0);

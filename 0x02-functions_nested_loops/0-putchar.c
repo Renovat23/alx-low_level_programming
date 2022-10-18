@@ -1,10 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - Entry points
- * Return: Always 0
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	printf("_putchar\n");
+	putchar('_');
+	putchar('p');
+	putchar('u');
+	putchar('t');
+	putchar('c');
+	putchar('h');
+	putchar('a');
+	putchar('r');
 	return (0);
 }

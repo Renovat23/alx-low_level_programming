@@ -2,12 +2,12 @@
 
 /**
  * _isdigit - checks for a digit
- * @n: digit number
+ * @c: digit number
  * Return: Always 0
  */
 int _isdigit(int c)
 {
-	if (c >= 0 && c <=9)
+	if (c >= 0 && c <= 9)
 		return (1);
 	else
 		return (0);

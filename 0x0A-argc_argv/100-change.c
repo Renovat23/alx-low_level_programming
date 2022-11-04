@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 		printf("0\n");
 		return (0);
 	}
+
 	for (i = 1; argv[i]; i++)
 	{
 		n = strtol(argv[i], &flag, 10);

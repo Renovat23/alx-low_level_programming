@@ -4,8 +4,8 @@
 /**
  * _strcmp - compare 2 string
  * @s1:string
- * @s2:strmp
- * Return:int
+ * @s2:strm
+ * Return:in
  */
 int _strcmp(char *s1, char *s2)
 {

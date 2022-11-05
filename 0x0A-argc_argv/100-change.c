@@ -8,30 +8,33 @@
  * @argv: arguments
  * Return: 0
  */
-int main(int argc, char **argv)
+int main(int argc, char **argv[])
 {
-	int i, n, sum = 0;
-	char *flag;
+	int p, tot, ch, a;
+	int coins[] = {25, 10, 5, 2, 1};
 
-	if (argc < 2)
+	p = tot = ch = a = 0;
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	tot = atoi(argv[1]);
+	if (tot <= 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-
-	for (i = 1; argv[i]; i++)
+	while (coins[p] != '\0')
 	{
-		n = strtol(argv[i], &flag, 10);
-		if (*flag)
+		if (tot >= coins[p])
 		{
-			printf("Error\n");
-			return (1);
+			a = (tot / coins[p]);
+			ch += a;
+			tot -= coins[p] * a;
 		}
-		else
-		{
-			sum += n;
-		}
+		p++;
 	}
-	printf("%d\n", sum);
+	printf("%d\n", ch);
 	return (0);
 }

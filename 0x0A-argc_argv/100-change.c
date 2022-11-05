@@ -3,38 +3,48 @@
 
 
 /**
- * main - adds positive numbers.
+ * main - prints the min number of coins to make change
+ * for an amount of money
  * @argc: argument count
  * @argv: arguments
  * Return: 0
  */
-int main(int argc, char **argv[])
+int main(int argc, char **argv)
 {
-	int p, tot, ch, a;
-	int coins[] = {25, 10, 5, 2, 1};
+	int total, count;
+	unsigned int i;
+	char *p;
+	int cents[] = {25, 10, 5, 2};
 
-	p = tot = ch = a = 0;
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	tot = atoi(argv[1]);
-	if (tot <= 0)
+	total = strtol(argv[1], &p, 10);
+	count = 0;
+
+	if (!*p)
 	{
-		printf("0\n");
-		return (0);
-	}
-	while (coins[p] != '\0')
-	{
-		if (tot >= coins[p])
+		while (total > 1)
 		{
-			a = (tot / coins[p]);
-			ch += a;
-			tot -= coins[p] * a;
+			for (i = 0; i < sizeof(cents[i]); i++)
+			{
+				if (total >= cents[i])
+				{
+					count += total / cents[i];
+					total = total % cents[i];
+				}
+			}
 		}
-		p++;
+		if (total == 1)
+			count++;
 	}
-	printf("%d\n", ch);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+	printf("%d\n", count);
 	return (0);
 }

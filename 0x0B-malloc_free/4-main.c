@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 /**
  * print_grid - prints a grid of integers
  * @grid: the address of the two dimensional grid
@@ -26,9 +25,8 @@ void print_grid(int **grid, int width, int height)
 		}
 		printf("\n");
 		h++;
-	}   
+	}
 }
-
 
 /**
  * main - check the code for ALX School students.

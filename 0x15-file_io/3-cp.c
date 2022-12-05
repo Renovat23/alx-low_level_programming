@@ -89,8 +89,8 @@ int main(int argc, char *argv[])
 	int fd_from, fd_to, close_to, close_from;
 	ssize_t lenr, lenw;
 	char buffer[1024];
-
 	mode_t file_perm;
+
 	check97(argc);
 	fd_from = open(argv[1], O_RDONLY);
 	check98((ssize_t)fd_from, argv[1], -1, -1);
